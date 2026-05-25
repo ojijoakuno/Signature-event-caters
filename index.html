@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Professional Catering Services in Kenya. Delicious food for weddings, parties, corporate events, and all occasions.">
+    <title>Flavors of Kenya - Professional Catering Services</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        nav {
+            background: #c41e3a;
+            padding: 1rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+
+        nav a:hover {
+            color: #ffd700;
+        }
+
+        header {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><rect fill="%23c41e3a" width="1200" height="600"/><circle fill="%23d4444a" cx="200" cy="200" r="100"/><circle fill="%23d4444a" cx="900" cy="400" r="150"/><rect fill="%23e8a838" x="0" y="500" width="1200" height="100"/></svg>');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 80px 20px;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        h2 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            color: #c41e3a;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .btn {
+            display: inline-block;
+            background: #c41e3a;
+            color: white;
+            padding: 15px 35px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            font-size: 1.1rem;
+            margin-top: 1rem;
+            transition: background 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background: #a01830;
+        }
+
+        .btn-green {
+            background: #25d366;
+        }
+
+        .btn-green:hover {
+            background: #1ea952;
+        }
+
+        .btn-gold {
+            background: #e8a838;
+            color: #333;
+        }
+
+        .btn-gold:hover {
+            background: #d49520;
+        }
+
+        .services {
+            padding: 4rem 0;
+            background: #fdf5f5;
+        }
+
+        .service-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .service-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            text-align: center;
+            border-top: 4px solid #c41e3a;
+        }
+
+        .service-icon {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .menu-section {
+            padding: 4rem 0;
+            background: #fff;
+        }
+
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .menu-card {
+            background: #fdf5f5;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        .menu-card h3 {
+            color: #c41e3a;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .menu-card ul {
+            list-style: none;
+        }
+
+        .menu-card ul li {
+            padding: 5px 0;
+            border-bottom: 1px dashed #ddd;
+        }
+
+        .menu-card ul li:before {
+            content: "🍽️ ";
+        }
+
+        .pricing {
+            padding: 4rem 0;
+            background: #fff5e6;
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .pricing-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+
+        .pricing-card.featured {
+            border: 3px solid #e8a838;
+            transform: scale(1.05);
+        }
+
+        .price {
+            font-size: 2.5rem;
+            color: #c41e3a;
+            font-weight: bold;
+        }
+
+        .contact {
+            padding: 4rem 0;
+            background: #fdf5f5;
+        }
+
+        form {
+            max-width: 600px;
+            margin: 0 auto;
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        input, textarea, select {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 1rem;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+
+        textarea {
+            height: 120px;
+            resize: vertical;
+        }
+
+        .highlights {
+            background: #c41e3a;
+            color: white;
+            padding: 3rem;
+            margin: 2rem auto;
+            border-radius: 10px;
+            max-width: 900px;
+            text-align: center;
+        }
+
+        .highlight-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .highlight-item {
+            padding: 1rem;
+        }
+
+        .highlight-icon {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .whatsapp-float {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #25d366;
+            color: white;
+            padding: 12px 20px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            z-index: 1000;
+            font-size: 1.1rem;
+        }
+
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 2rem;
+        }
+
+        .areas {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .area-tag {
+            background: #c41e3a;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 1.8rem;
+            }
+            
+            nav ul {
+                flex-direction: column;
+                text-align: center;
+                gap: 0.5rem;
+            }
+
+            .whatsapp-float {
+                bottom: 10px;
+                right: 10px;
+                padding: 10px 15px;
+                font-size: 0.9rem;
+            }
+
+            .pricing-card.featured {
+                transform: scale(1);
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#menu">Our Menu</a></li>
+            <li><a href="#pricing">Packages</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <header id="home">
+        <h1>🍽️ Flavors of Kenya Catering</h1>
+        <p style="font-size: 1.3rem; margin-bottom: 1.5rem;">Delicious Food for Every Occasion - Weddings, Parties, Corporate & More!</p>
+        <p>✓ Fresh Ingredients ✓ Professional Chefs ✓ On-Time Delivery ✓ Affordable Prices</p>
+        <a href="#contact" class="btn">Get Free Quote Today!</a>
+        <br>
+        <a href="tel:+254700000000" class="btn btn-gold" style="margin-top: 10px;">📞 Call Now: 0700 000 000</a>
+    </header>
+
+    <div class="container">
+        <div class="highlights">
+            <h3 style="font-size: 1.8rem; margin-bottom: 1rem; color: white;">Why Choose Flavors of Kenya?</h3>
+            <div class="highlight-grid">
+                <div class="highlight-item">
+                    <div class="highlight-icon">👨‍🍳</div>
+                    <h4>Expert Chefs</h4>
+                    <p>Experienced in Kenyan & International cuisine</p>
+                </div>
+                <div class="highlight-item">
+                    <div class="highlight-icon">🥗</div>
+                    <h4>Fresh Food</h4>
+                    <p>Made with fresh, local ingredients daily</p>
+                </div>
+                <div class="highlight-item">
+                    <div class="highlight-icon">🚚</div>
+                    <h4>Free Delivery</h4>
+                    <p>Within Nairobi & surrounding areas</p>
+                </div>
+                <div class="highlight-item">
+                    <div class="highlight-icon">💯</div>
+                    <h4>Satisfaction</h4>
+                    <p>100% satisfaction guaranteed</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section class="services" id="services">
+        <div class="container">
+            <h2>Events We Cater For</h2>
+            <div class="service-grid">
+                <div class="service-card">
+                    <div class="service-icon">💒</div>
+                    <h3>Weddings</h3>
+                    <p>Elegant catering for your special day. Customizable menus for any wedding size.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🎂</div>
+                    <h3>Birthday Parties</h3>
+                    <p>Fun and delicious food for birthday celebrations of all ages.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🏢</div>
+                    <h3>Corporate Events</h3>
+                    <p>Professional catering for meetings, conferences, and office parties.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🎓</div>
+                    <h3>Graduations</h3>
+                    <p>Celebrate academic achievements with amazing food.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🙏</div>
+                    <h3>Religious Events</h3>
+                    <p>Catering for church functions, fundraisers, and community gatherings.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🏠</div>
+                    <h3>Home Parties</h3>
+                    <p>Host with confidence. We bring delicious food to your doorstep.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="menu-section" id="menu">
+        <div class="container">
+            <h2>Our Delicious Menu Options</h2>
+            <div class="menu-grid">
+                <div class="menu-card">
+                    <h3>🍖 Kenyan Favorites</h3>
+                    <ul>
+                        <li>Nyama Choma (Roast Meat)</li>
+                        <li>Pilau & Biryani</li>
+                        <li>Ugali & Sukuma Wiki</li>
+                        <li>Mukimo & Beef Stew</li>
+                        <li>Chapati & Beans</li>
+                        <li>Githeri</li>
+                    </ul>
+                </div>
+                <div class="menu-card">
+                    <h3>🍗 Grills & BBQ</h3>
+                    <ul>
+                        <li>Grilled Chicken</li>
+                        <li>Mishkaki (Skewers)</li>
+                        <li>Beef Steaks</li>
+                        <li>Grilled Fish</li>
+                        <li>BBQ Ribs</li>
+                        <li>Chicken Wings</li>
+                    </ul>
+                </div>
+                <div class="menu-card">
+                    <h3>🥗 Sides & Salads</h3>
+                    <ul>
+                        <li>Kachumbari</li>
+                        <li>Coleslaw</li>
+                        <li>Mixed Vegetable Salad</li>
+                        <li>Potato Wedges</li>
+                        <li>Rice Pilau</li>
+                        <li>Fresh Fruit Platter</li>
+                    </ul>
+                </div>
+                <div class="menu-card">
+                    <h3>🥤 Drinks & Desserts</h3>
+                    <ul>
+                        <li>Fresh Juice (Mango, Passion)</li>
+                        <li>Sodas & Water</li>
+                        <li>Tea & Coffee</li>
+                        <li>Mandazi</li>
+                        <li>Cake (Custom Orders)</li>
+                        <li>Ice Cream</li>
+                    </ul>
+                </div>
+            </div>
+            <p style="text-align: center; margin-top: 2rem; font-style: italic;">* We customize menus for your event. Just ask!</p>
+        </div>
+    </section>
+
+    <section class="pricing" id="pricing">
+        <div class="container">
+            <h2>Affordable Catering Packages</h2>
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <h3>Basic Package</h3>
+                    <div class="price">KSh 500</div>
+                    <p style="font-weight: bold;">per person</p>
+                    <p>✓ 2 Main Dishes</p>
+                    <p>✓ 1 Side Dish</p>
+                    <p>✓ 1 Drink</p>
+                    <p>✓ Disposable Plates & Cups</p>
+                    <p style="color: #999;">Min. 50 people</p>
+                    <a href="#contact" class="btn">Book Now</a>
+                </div>
+                <div class="pricing-card featured">
+                    <div style="background: #e8a838; color: white; padding: 5px; margin: -2rem -2rem 1rem -2rem; border-radius: 10px 10px 0 0;">
+                        ⭐ MOST POPULAR
+                    </div>
+                    <h3>Standard Package</h3>
+                    <div class="price">KSh 1,000</div>
+                    <p style="font-weight: bold;">per person</p>
+                    <p>✓ 3 Main Dishes</p>
+                    <p>✓ 2 Side Dishes</p>
+                    <p>✓ 2 Drinks + Water</p>
+                    <p>✓ Quality Plates & Cutlery</p>
+                    <p>✓ Free Delivery within Nairobi</p>
+                    <p style="color: #999;">Min. 30 people</p>
+                    <a href="#contact" class="btn">Book Now</a>
+                </div>
+                <div class="pricing-card">
+                    <h3>Premium Package</h3>
+                    <div class="price">KSh 2,000</div>
+                    <p style="font-weight: bold;">per person</p>
+                    <p>✓ 4+ Main Dishes</p>
+                    <p>✓ 3 Side Dishes</p>
+                    <p>✓ Unlimited Drinks</p>
+                    <p>✓ Dessert Included</p>
+                    <p>✓ Waiters & Service Staff</p>
+                    <p>✓ Decorations (Basic)</p>
+                    <a href="#contact" class="btn">Get Custom Quote</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="areas">
+        <div class="container" style="text-align: center; padding: 3rem 0;">
+            <h2>Areas We Serve</h2>
+            <p style="margin-bottom: 1.5rem;">We deliver across Nairobi and surrounding counties</p>
+            <div class="areas">
+                <span class="area-tag">Nairobi CBD</span>
+                <span class="area-tag">Westlands</span>
+                <span class="area-tag">Kilimani</span>
+                <span class="area-tag">Karen</span>
+                <span class="area-tag">Runda</span>
+                <span class="area-tag">Kileleshwa</span>
+                <span class="area-tag">Lavington</span>
+                <span class="area-tag">Kiambu</span>
+                <span class="area-tag">Thika</span>
+                <span class="area-tag">Machakos</span>
+                <span class="area-tag">Kitengela</span>
+                <span class="area-tag">Ngong</span>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact" id="contact">
+        <div class="container">
+            <h2>Get In Touch</h2>
+            <p style="text-align: center; margin-bottom: 2rem;">Tell us about your event and we'll create the perfect menu for you!</p>
+            
+            <form id="contactForm">
+                <input type="text" id="name" placeholder="Your Full Name *" required>
+                <input type="tel" id="phone" placeholder="Phone Number (Safaricom/Airtel) *" required>
+                <input type="email" id="email" placeholder="Email Address">
+                <select id="eventType" required>
+                    <option value="">Type of Event *</option>
+                    <option>Wedding</option>
+                    <option>Birthday Party</option>
+                    <option>Corporate Event</option>
+                    <option>Graduation</option>
+                    <option>Religious Event</option>
+                    <option>Home Party</option>
+                    <option>Other Event</option>
+                </select>
+                <input type="number" id="guests" placeholder="Expected Number of Guests *" min="10" required>
+                <input type="date" id="eventDate" placeholder="Event Date">
+                <select id="package" required>
+                    <option value="">Select Package *</option>
+                    <option>Basic - KSh 500/person</option>
+                    <option>Standard - KSh 1,000/person</option>
+                    <option>Premium - KSh 2,000/person</option>
+                    <option>Custom Package</option>
+                </select>
+                <textarea id="message" placeholder="Any special requests, dietary requirements, or menu preferences..."></textarea>
+                <button type="submit" class="btn" style="width: 100%; font-size: 1.2rem;">Send Message & Get Quote 📩</button>
+            </form>
+
+            <div style="text-align: center; margin-top: 2rem; padding: 2rem; background: white; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+                <h3 style="color: #c41e3a; margin-bottom: 1rem;">Contact Us Directly</h3>
+                <p style="font-size: 1.2rem;"><strong>📞 Phone:</strong> 0705499283</p>
+                <p style="font-size: 1.2rem;"><strong>📱 WhatsApp:</strong> 0794712401</p>
+                <p style="font-size: 1.2rem;"><strong>✉️ Email:</strong> ochiengmeshack126@gmail.com</p>
+                <p style="font-size: 1.2rem;"><strong>💳 M-Pesa Paybill:</strong> 247247</p>
+                <p style="font-size: 1.2rem;"><strong>Account No:</strong> 0700 000 000</p>
+                <p style="margin-top: 1rem; font-weight: bold;">📍 We are based in Nairobi, Kenya</p>
+                <p><strong>Operating Hours:</strong> Monday - Sunday | 6AM - 10PM</p>
+            </div>
+        </div>
+    </section>
+
+    <a href="https://wa.me/254794712401?text=Hello%20ochiengmeshack126@gmail.com%20of%20Kenya!%20I%20need%20catering%20services%20for%20an%20event" class="whatsapp-float" target="_blank">
+        💬 WhatsApp Us
+    </a>
+
+    <footer>
+        <p><strong>🍽️ Flavors of Kenya Catering</strong></p>
+        <p>Delicious Food for
